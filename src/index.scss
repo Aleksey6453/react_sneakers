@@ -19,6 +19,29 @@ body {
   background-color: #65FFD4;
 }
 
+.new_btn{
+  box-sizing: border-box;
+  background-color: #14D888;
+  border: 3px solid transparent;
+  border-radius: 10px;
+  padding: 5px;
+  svg:hover{
+    path{
+      fill: #14D888;  
+    }
+  }
+}
+.new_btn:hover {
+  text-decoration: none;
+  transition: all .8s;
+  font-weight: bolder;
+  border: 3px solid #14D888;
+  color: black;
+  background-color: transparent;
+  cursor: pointer;
+
+}
+
 .btn {
   box-sizing: border-box;
   appearance: none;
@@ -39,6 +62,7 @@ body {
   font-weight: 700;
   color:#65FFD4;
   margin: 20px;
+
 }
 .btn:hover {
     text-decoration: none;
@@ -46,7 +70,7 @@ body {
     font-weight: bolder;
     border: 3px solid black;
     color: black;
-    background-color: #65FFD4;
+    background-color: #14D888;
 }
 .btn:active {
   background-color: lime;
@@ -112,6 +136,38 @@ body {
   letter-spacing: 0.3em; 
 }
 
+.card{
+  padding: 20px;
+  background-color: white;
+  padding-top: 0;
+  padding-right: 30px;
+  width: 30%;
+  box-sizing: border-box;
+  min-width: 300px;
+  img{
+    width: 100%;
+    // min-width: 200px;
+  }
+  .title_cart{
+    margin: 10px 0 5px 0;
+  }
+  .list_card{
+    display: flex;
+    flex-direction: column;
+  }
+  .mar_bot_10{
+    margin-bottom: 10px;
+  }
+}
+
+.cards{
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
 .header{
   display: flex;
   align-items: center;
@@ -121,6 +177,13 @@ body {
   padding-left: 20px;
   padding-right: 20px;
   box-sizing: border-box;
+  svg:hover{
+    stroke-width: 2px;
+    path{
+      fill: #619AD4;
+      stroke: #619AD4; 
+    }
+  }
   .logo{
     width: 100px;
     cursor: pointer;
@@ -129,6 +192,8 @@ body {
     width: 30px;
     cursor: pointer;
   }
+
+ 
 
   ul{
     list-style-type: none;
@@ -140,6 +205,7 @@ body {
   }
   .title_header{
     font-size: 25px;
+    text-transform: uppercase;
   }
   .m_p_0{
     margin: 0;
@@ -167,8 +233,25 @@ body {
   }
 }
 .wrapper{
-  max-width: 1080px;
-  margin: 50px auto;
+  // max-width: 1080px;
+  // margin: 50px auto;
+  width: 100%;
+}
+.header_cont{
+  background-color: white;
+  padding: 20px;
+  h1{
+    margin: 0;
+  }
+}
+
+.fl_beetwen{
+  display: flex;
+  justify-content: space-between;
+}
+
+.al_items_end{
+  align-items: flex-end;
 }
 
 
