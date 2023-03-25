@@ -54,15 +54,16 @@ body {
   font-size: 16px;
   font-weight: 400;
   line-height: 1;
-  padding: 1.2em 2.8em;
+  padding: 1em 2.4em;
   text-decoration: none;
   text-align: center;
-  text-transform: uppercase;
   font-family: Century Gothic;
   font-weight: 700;
-  color:#65FFD4;
-  margin: 20px;
+  color:#14D888;
+  margin: 15px;
+  position: relative;
 
+  
 }
 .btn:hover {
     text-decoration: none;
@@ -71,6 +72,7 @@ body {
     border: 3px solid black;
     color: black;
     background-color: #14D888;
+
 }
 .btn:active {
   background-color: lime;
@@ -147,7 +149,7 @@ body {
   border-radius: 10px;
   transition: all 0.3s;
   &:hover{
-    box-shadow: 2px 0px 31px 0px rgba(108,230,114,0.5);
+    box-shadow: 2px 0px 31px -10px rgba(120,137,158,1);
     transform: translateY(-5px);
   }
 
@@ -264,7 +266,7 @@ body {
   justify-content: space-between;
 }
 
-.fl_beetwen{
+.fl_between{
   display: flex;
   justify-content: space-between;
 }
@@ -275,6 +277,10 @@ body {
 
 .al_items_end{
   align-items: flex-end;
+}
+
+.al_items_cen{
+  align-items: center;
 }
 
 .search_block{
@@ -289,6 +295,87 @@ body {
     outline: none;
   }
 }
+
+.overlay{
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 7;
+  width: 100%;
+  height: 100%;
+}
+.drawer{
+  box-sizing: border-box;
+  position: absolute;
+  height: 100%;
+  right: 0;
+  width: 25%;
+  background-color: white;
+  box-shadow: 2px 0px 31px -10px rgba(120,137,158,1);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  .new_btn{
+    box-sizing: border-box;
+    background-color: white;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    padding: 3px;
+    margin-top: 0;
+    svg:hover{
+      path{
+        fill: #E2E223;  
+      }
+    }
+  }
+  .new_btn:hover {
+    text-decoration: none;
+    transition: all .8s;
+    font-weight: bolder;
+    border: 2px solid #707C79;
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+  .new_btn:active {
+    background-color: #707C79;
+    border-radius: 20px;
+    opacity: 0.5;
+  }
+  h2{
+    margin: 0;
+  }
+  ul{
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+  }
+  .cartItems{
+    flex: 1;
+    overflow: auto;
+    margin-bottom: 30px;
+  }
+  .cartItem{
+    margin-bottom: 20px;
+    img{
+      // max-width: 150px;
+      width: 50%;
+      margin-bottom: 10px;
+    }
+    p{
+      margin: 0;
+      font-size: 15px;
+    }
+    b{
+      font-size: 16px;
+    }
+    
+  }
+}
+
+
 
 
 

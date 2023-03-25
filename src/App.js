@@ -2,9 +2,62 @@
 
 function App() {
   return (
-    <div className=' wrapper'>
-      <div className="drawer">
-        3
+    <div className='wrapper'>
+      <div className="overlay">
+        <div className="drawer">
+          <div className="fl_between al_items_cen">
+            <h2>Cart</h2>
+            <button className="new_btn">
+                    <svg width="20px" 
+                          height="20px" 
+                          viewBox="0 0 24 24" 
+                          fill="#707C79" xmlns="http://www.w3.org/2000/svg">
+                    <g id="Menu / Close_MD">
+                    <path id="Vector" d="M18 18L12 12M12 12L6 6M12 12L18 6M12 12L6 18" stroke="#707C79" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </g>
+                    </svg>
+              </button>
+          </div>
+          
+          <div className="cartItems">
+            <div className="cartItem">
+              <img src="/img/sneakers/1.jpg" alt="sneaker" />
+              <div className="fl_between al_items_cen">
+                <div>
+                  <p>Title of model</p>
+                  <p>articule</p>
+                  <b>300 $</b>
+                </div>
+                <button className="new_btn">
+                    <svg width="20px" 
+                          height="20px" 
+                          viewBox="0 0 24 24" 
+                          fill="#E2E200" xmlns="http://www.w3.org/2000/svg">
+                    <g id="Menu / Close_MD">
+                    <path id="Vector" d="M18 18L12 12M12 12L6 6M12 12L18 6M12 12L6 18" stroke="#707C79" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </g>
+                    </svg>
+                </button>
+              </div>
+            </div>
+
+
+          </div>
+          <ul>
+            <li className="fl_between">
+              <span>Order summary:</span>
+              <div></div>
+              <b>300 $</b>
+            </li>
+            <li className="fl_between">
+            <span>Discount 5%:</span>
+              <div></div>
+              <b>15$</b>
+            </li>
+            <button className="btn">Place an order </button>
+          </ul>
+         
+        </div>
       </div>
       <header className="header">
         <div className="header_left">
@@ -67,12 +120,12 @@ function App() {
                   <img width={30} height={30} src="/img/heart-not-fill.svg" alt="unlike" />
               </button> */}
               <img src="/img/sneakers/1.jpg" alt="sneaker" />
-              <div className="fl_beetwen al_items_end">
+              <div className="fl_between al_items_end">
                 <div className="list_card">
                   <h4 className="title_cart">Title of model</h4>
                   <b className="mar_bot_10">articule</b>
                   <span>Price</span>
-                  <span><b> 1205 $ </b></span>
+                  <span><b> 300 $ </b></span>
                 </div>
                 <div className="fl_col">
                   <button className="button_like">
@@ -93,7 +146,7 @@ function App() {
              
               </div>
             </div>  
-           
+
         </div>
        
        
