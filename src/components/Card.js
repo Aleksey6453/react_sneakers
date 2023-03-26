@@ -1,21 +1,26 @@
 import React from 'react'
 
-const Card = () => {
+const Card = (props) => {
+
+    const f = () => {
+        alert(props.articule)
+    }
+    
   return (
     <div className="card">
-            <img src="/img/sneakers/1.jpg" alt="sneaker" />
+            <img src={props.imageUrl} alt="sneaker" />
             <div className="fl_between al_items_end">
             <div className="list_card">
-                <h4 className="title_cart">Title of model</h4>
-                <b className="mar_bot_10">articule</b>
-                <span>Price</span>
-                <span><b> 300 $ </b></span>
+                <h4 className="title_cart">{props.title}</h4>
+                <b className="mar_bot_10">{props.articule}</b>
+                <span>Price: </span>
+                <span><b> {props.price} $ </b></span>
             </div>
             <div className="fl_col">
                 <button className="button_like">
                     <img width={30} height={30} src="/img/heart-not-fill.svg" alt="unlike" />
                 </button>
-                <button className="new_btn">
+                <button onClick={f} className="new_btn">
                 <svg width="20px" 
                     height="20px" 
                     viewBox="0 0 20 20" 
