@@ -48,7 +48,9 @@ const Content = () => {
                    <Card title={obj.title} 
                    articule={obj.articule} 
                    price={obj.price} 
-                   imageUrl={obj.imageUrl} />
+                   imageUrl={obj.imageUrl}
+                   onClickFavorite={()=> console.log('Add to favorite')}
+                   onClickPlus={() => console.log('Press to plus')} />
             ))}
 
         </div>
