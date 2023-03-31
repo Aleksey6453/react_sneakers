@@ -1,6 +1,6 @@
 import React from 'react'
 
-const CartItem = () => {
+const CartItem = (props) => {
   return (
     <div className="cartItem">
         <img src="/img/sneakers/1.jpg" alt="sneaker" />
@@ -8,7 +8,7 @@ const CartItem = () => {
         <div>
             <p>Title of model</p>
             <p>articule</p>
-            <b>300 $</b>
+            <b>7</b>
         </div>
         <button className="new_btn">
             <svg width="20px" 

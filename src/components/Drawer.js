@@ -1,13 +1,13 @@
 import React from 'react'
 import CartItem from './CartItem'
 
-const Drawer = () => {
+const Drawer = ({onCloseCart, element = []}) => {
   return (
-    <div style={{display: 'none'}} className="overlay">
+    <div  className="overlay">
         <div className="drawer">
             <div className="fl_between al_items_cen">
             <h2>Cart</h2>
-            <button className="new_btn">
+            <button className="new_btn" onClick={onCloseCart}>
                     <svg width="20px" 
                             height="20px" 
                             viewBox="0 0 24 24" 
@@ -20,9 +20,12 @@ const Drawer = () => {
             </div>
             
             <div className="cartItems">
-                <CartItem />
-                <CartItem />
-                <CartItem />
+                {/* <CartItem /> */}
+                { element.map((obj)=> (
+                    <CartItem title={obj.title} articule={obj.articule} price={obj.price} />
+                ))   
+                }
+             
             </div>
             <ul>
             <li className="fl_between">

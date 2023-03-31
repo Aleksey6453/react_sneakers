@@ -177,7 +177,7 @@ body {
 
 .cards{
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   background-color: white;
   padding: 20px;
   flex-wrap: wrap;
@@ -192,8 +192,11 @@ body {
   padding-left: 20px;
   padding-right: 20px;
   box-sizing: border-box;
+  // span:hover{
+  //   color: #619AD4;
+  // }
   svg:hover{
-    stroke-width: 2px;
+    stroke-width: 1px;
     path{
       fill: #619AD4;
       stroke: #619AD4; 
@@ -208,8 +211,14 @@ body {
     cursor: pointer;
   }
 
- 
+  .curs_p {
+    cursor: pointer;
+  }
 
+  .cart{
+    width: 100px;
+   } 
+  
   ul{
     list-style-type: none;
   }
@@ -232,6 +241,9 @@ body {
   }
   .padding_l_20{
     padding-left: 20px;
+  }
+  .padding_l_30{
+    padding-left: 30px;
   }
   .padding_l_40{
     padding-left: 40px;
