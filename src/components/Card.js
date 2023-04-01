@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from 'react'
 
-const Card = (props) => {
+const Card = ({imageUrl, title, articule, price, onPlus, onFavorite }) => {
     const [added, setAdded] = useState(false)
     const [like, setLike] = useState(false)
 
     const onClickPlus = () => {
+        onPlus({imageUrl, title, articule, price})
         setAdded(added => !added)
-        console.log(added)
+        console.log("Change to plus")
     }
 
     const onClickFavorite = () => {
+        onFavorite()
         setLike(like => !like)
         console.log(like)
     }
@@ -20,13 +22,13 @@ const Card = (props) => {
 
   return (
     <div className="card">
-            <img src={props.imageUrl} alt="sneaker" />
+            <img src={imageUrl} alt="sneaker" />
             <div className="fl_between al_items_end">
             <div className="list_card">
-                <h4 className="title_cart">{props.title}</h4>
-                <b className="mar_bot_10">{props.articule}</b>
+                <h4 className="title_cart">{title}</h4>
+                <b className="mar_bot_10">{articule}</b>
                 <span>Price: </span>
-                <span><b> {props.price} $ </b></span>
+                <span><b> {price} $ </b></span>
             </div>
             <div className="fl_col">
                 <button onClick={onClickFavorite} className="button_like">
