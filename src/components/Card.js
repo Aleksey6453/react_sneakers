@@ -43,7 +43,7 @@ const Card = ({imageUrl, title, articule, price, onPlus, onFavorite }) => {
                                 viewBox="0 0 24 24" 
                                 fill="none" 
                                 xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" 
+                                <path fillRule="evenodd" 
                                 clip-rule="evenodd" 
                                 d="M19.7071 6.29289C20.0976 6.68342 20.0976 7.31658 19.7071 7.70711L10.4142 17C9.63316 17.7811 8.36683 17.781 7.58579 17L3.29289 12.7071C2.90237 12.3166 2.90237 11.6834 3.29289 11.2929C3.68342 10.9024 4.31658 10.9024 4.70711 11.2929L9 15.5858L18.2929 6.29289C18.6834 5.90237 19.3166 5.90237 19.7071 6.29289Z" 
                                 fill="white"/>
@@ -53,7 +53,7 @@ const Card = ({imageUrl, title, articule, price, onPlus, onFavorite }) => {
                     xmlns="http://www.w3.org/2000/svg" 
                     fill="none">
                     <path fill="black" 
-                    fill-rule="evenodd" 
+                    fillRule="evenodd" 
                     d="M9 17a1 1 0 102 0v-6h6a1 1 0 100-2h-6V3a1 1 0 10-2 0v6H3a1 1 0 000 2h6v6z"/>
                 </svg>
                 }

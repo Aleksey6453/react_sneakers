@@ -1,14 +1,25 @@
 import React from 'react'
 import CartItem from './CartItem'
+import { useState } from 'react';
 
 const Drawer = ({onCloseCart, items = []}) => {
+
+    const openModal = () => {
+      document.body.style.overflow = "hidden"
+    } 
+    const closeModal = ()=>{
+        document.body.style.overflow = "auto"
+        onCloseCart()  
+    }  
+
+{Drawer && openModal()};
 
   return (
     <div  className="overlay">
         <div className="drawer">
             <div className="fl_between al_items_cen">
             <h2>Cart</h2>
-            <button className="new_btn" onClick={onCloseCart}>
+            <button className="new_btn" onClick={closeModal} >
                     <svg width="20px" 
                             height="20px" 
                             viewBox="0 0 24 24" 
