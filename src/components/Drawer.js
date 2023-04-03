@@ -2,7 +2,8 @@ import React from 'react'
 import CartItem from './CartItem'
 import { useState } from 'react';
 
-const Drawer = ({onCloseCart, items = []}) => {
+
+const Drawer = ({onCloseCart, onRemove, items = []}) => {
 
     const openModal = () => {
       document.body.style.overflow = "hidden"
@@ -25,7 +26,7 @@ const Drawer = ({onCloseCart, items = []}) => {
                             viewBox="0 0 24 24" 
                             fill="#707C79" xmlns="http://www.w3.org/2000/svg">
                     <g id="Menu / Close_MD">
-                    <path id="Vector" d="M18 18L12 12M12 12L6 6M12 12L18 6M12 12L6 18" stroke="#707C79" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path id="Vector" d="M18 18L12 12M12 12L6 6M12 12L18 6M12 12L6 18" stroke="#707C79" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     </g>
                     </svg>
                 </button>
@@ -33,24 +34,24 @@ const Drawer = ({onCloseCart, items = []}) => {
             
             <div className="cartItems">
                 {/* <CartItem /> */}
-                { items.map((item)=> (
+                { items.map((obj)=> (
                     <div className="cartItem">
                         <div className="img_wrap">
-                            <img src={item.imageUrl} alt="sneaker" />
+                            <img src={obj.imageUrl} alt="sneaker" />
                         </div>  
                         <div className="fl_between al_items_cen">
                             <div>
-                                <p>{item.title}</p>
-                                <p>{item.articule}</p>
-                                <b>{item.price} $</b>
+                                <p>{obj.title}</p>
+                                <p>{obj.articule}</p>
+                                <b>{obj.price} $</b>
                             </div>
-                            <button className="new_btn">
+                            <button className="new_btn" onClick={()=>{onRemove(obj.id)}}>
                                 <svg width="20px" 
                                         height="20px" 
                                         viewBox="0 0 24 24" 
                                         fill="#E2E200" xmlns="http://www.w3.org/2000/svg">
                                 <g id="Menu / Close_MD">
-                                <path id="Vector" d="M18 18L12 12M12 12L6 6M12 12L18 6M12 12L6 18" stroke="#707C79" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path id="Vector" d="M18 18L12 12M12 12L6 6M12 12L18 6M12 12L6 18" stroke="#707C79" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                                 </g>
                                 </svg>
                             </button>

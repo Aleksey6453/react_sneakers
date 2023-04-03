@@ -25,17 +25,27 @@ function App() {
     useEffect(()=>{
       axios.get('https://6424ae787ac292e3cfef8991.mockapi.io/items').then((res)=>{
         setItems(res.data)
+      });
+      axios.get('https://6424ae787ac292e3cfef8991.mockapi.io/cart').then((res)=>{
+        setCartItems(res.data)
       })
     },[])
 
     const onAddToCart = (obj) => {
+      axios.post('https://6424ae787ac292e3cfef8991.mockapi.io/cart', obj);
       setCartItems(prev => [...prev, obj])
+    }
+
+    const onRemoveItemCart = (id) => {
+      // axios.delete(`https://6424ae787ac292e3cfef8991.mockapi.io/cart/${id}`);
+      setCartItems(prev => prev.filter(item => item.id !== id));
+      // console.log(id)
     }
 
   
   return (
     <div className='wrapper'>
-      {cartOpened && <Drawer items={cartItems} onCloseCart={()=>setCartOpened(false)} />}
+      {cartOpened && <Drawer items={cartItems} onCloseCart={()=>setCartOpened(false)} onRemove={onRemoveItemCart} />}
      
       <Header onClickCart={()=>setCartOpened(true)} />
       <div className="content">
@@ -64,5 +74,6 @@ function App() {
     </div>
   );
 }
+
 
 export default App;
