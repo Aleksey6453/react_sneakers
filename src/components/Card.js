@@ -11,9 +11,8 @@ const Card = ({imageUrl, title, articule, price, onPlus, onFavorite }) => {
     }
 
     const onClickFavorite = () => {
-        onFavorite()
+        onFavorite({imageUrl, title, articule, price})
         setLike(like => !like)
-        console.log(like)
     }
 
     useEffect(()=>{
