@@ -5,6 +5,8 @@ import Header from './components/Header';
 import { useEffect } from 'react';
 import Card from './components/Card';
 import axios from 'axios';
+import {Route, Routes} from 'react-router-dom'
+
 
 
 
@@ -53,7 +55,12 @@ function App() {
     <div className='wrapper'>
       {cartOpened && <Drawer items={cartItems} onCloseCart={()=>setCartOpened(false)} onRemove={onRemoveItemCart} />}
      
-      <Header onClickCart={()=>setCartOpened(true)} />
+      <Routes>
+          <Route path='/' exact element= {<Header onClickCart={()=>setCartOpened(true)} />} />
+      </Routes>
+      
+   
+
       <div className="content">
         <div className="header_cont">
         <h1>{searchValue ? `Search: "${searchValue}"`: "All sneakers" }</h1>
