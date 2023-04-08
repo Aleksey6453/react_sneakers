@@ -1,9 +1,7 @@
 import { useState } from 'react';
-import CartItem from './components/CartItem';
 import Drawer from './components/Drawer';
 import Header from './components/Header';
 import { useEffect } from 'react';
-import Card from './components/Card';
 import axios from 'axios';
 import {Route, Routes} from 'react-router-dom'
 import Hero from './components/Hero';
@@ -76,7 +74,7 @@ function App() {
                   />
             </> 
           }/>
-          <Route path='/favorites' element={ <Favorites items={favorites} /> } />
+          <Route path='/favorites' element={ <Favorites items={favorites}  /> } />
       </Routes>
       
       

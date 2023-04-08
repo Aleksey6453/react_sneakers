@@ -21,7 +21,9 @@ const Home = ({items, searchValue, onChangeSearchInput, onAddToFavorite, onAddTo
                    price={item.price} 
                    imageUrl={item.imageUrl}
                    onFavorite={onAddToFavorite}
-                   onPlus={onAddToCart} />
+                   onPlus={onAddToCart} 
+                   
+                />
             ))}
 
         </div>

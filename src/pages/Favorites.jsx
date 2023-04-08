@@ -4,6 +4,9 @@ import Card from '../components/Card'
 
 
 const Favorites = ({items}) => {
+  const onTest = () => {
+    console.log('test')
+  }
   return (
     <div className="content">
         <div className="header_cont">
@@ -13,10 +16,13 @@ const Favorites = ({items}) => {
             {items.map((item) => (
                    <Card 
                    key={item.articule}
-                   title={item.title} 
-                   articule={item.articule} 
-                   price={item.price} 
-                   imageUrl={item.imageUrl}
+                  //  title={item.title} 
+                  //  articule={item.articule} 
+                  //  price={item.price} 
+                  //  imageUrl={item.imageUrl}
+                   onPlus={onTest}
+                   onFavorite={onTest}
+                   {... item}
                   />
             ))}
         </div>

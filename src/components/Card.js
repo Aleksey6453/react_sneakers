@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-const Card = ({imageUrl, title, articule, price, onPlus, onFavorite }) => {
+const Card = ({id, imageUrl, title, articule, price, onPlus, onFavorite }) => {
     const [added, setAdded] = useState(false)
     const [like, setLike] = useState(false)
 
@@ -11,7 +11,7 @@ const Card = ({imageUrl, title, articule, price, onPlus, onFavorite }) => {
     }
 
     const onClickFavorite = () => {
-        onFavorite({imageUrl, title, articule, price})
+        onFavorite({id, imageUrl, title, articule, price})
         setLike(like => !like)
     }
 
