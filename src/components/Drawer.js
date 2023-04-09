@@ -1,9 +1,17 @@
 import React from 'react'
 import CartItem from './CartItem'
 import { useState } from 'react';
+import StateCart from './StateCart';
+import AppContext from '../context';
+import { useCartSum } from '../Hooks/useCartSum';
 
 
 const Drawer = ({onCloseCart, onRemove, items = []}) => {
+
+    const {cartItems, setCartItems, totalPrice} = useCartSum();
+
+    // const {cartItems} = React.useContext(AppContext)
+    // const totalPrice = cartItems.reduce((sum, obj)=>obj.price + sum, 0);  
 
     const openModal = () => {
       document.body.style.overflow = "hidden"
@@ -12,9 +20,7 @@ const Drawer = ({onCloseCart, onRemove, items = []}) => {
         document.body.style.overflow = "auto"
         onCloseCart()  
     }  
-
 {Drawer && openModal()};
-
   return (
     <div  className="overlay">
         <div className="drawer">
@@ -36,7 +42,7 @@ const Drawer = ({onCloseCart, onRemove, items = []}) => {
                 <>
                 <div className="cartItems">
                         { items.map((obj)=> (
-                            <div className="cartItem">
+                            <div key={obj.id} className="cartItem">
                                 <div className="img_wrap">
                                     <img src={obj.imageUrl} alt="sneaker" />
                                 </div>  
@@ -65,31 +71,21 @@ const Drawer = ({onCloseCart, onRemove, items = []}) => {
                         <li className="fl_between">
                             <span>Order summary:</span>
                             <div></div>
-                            <b>300 $</b>
+                            <b>{totalPrice} $</b>
                         </li>
-                        <li className="fl_between">
-                        <span>Discount 5%:</span>
-                            <div></div>
-                            <b>15$</b>
-                        </li>
-                        <button className="btn">Place an order </button>
+                        
+                        <button className="btn">Place an order {totalPrice} </button>
                     </ul>
                 </>
                      : (
-                        
+                       
                     <div className="cartEmpty">
                         <h2 className='title'>It's still empty here</h2>
                         <img src="/img/empty_box.jpg" alt="emptyBox" />
                     </div>
                 )
             }
-
-
-            
-            
-
-
-         
+     
         </div>
     </div>
   )

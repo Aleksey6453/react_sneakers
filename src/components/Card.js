@@ -5,7 +5,7 @@ const Card = ({id, imageUrl, title, articule, price, onPlus, onFavorite }) => {
     const [like, setLike] = useState(false)
 
     const onClickPlus = () => {
-        onPlus({imageUrl, title, articule, price})
+        onPlus({id, imageUrl, title, articule, price})
         setAdded(added => !added)
         console.log("Change to plus")
     }

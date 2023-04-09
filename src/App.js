@@ -1,3 +1,4 @@
+import React from 'react';
 import { useState } from 'react';
 import Drawer from './components/Drawer';
 import Header from './components/Header';
@@ -7,6 +8,7 @@ import {Route, Routes} from 'react-router-dom'
 import Hero from './components/Hero';
 import Home from './pages/Home';
 import Favorites from './pages/Favorites';
+import AppContext from './context';
 
 
 function App() {
@@ -35,8 +37,18 @@ function App() {
     },[])
 
     const onAddToCart = (obj) => {
-      axios.post('https://6424ae787ac292e3cfef8991.mockapi.io/cart', obj);
-      setCartItems(prev => [...prev, obj])
+      try{
+        if(cartItems.find(item => Number(item.id) === Number(obj.id))){
+          setCartItems((prev) => prev.filter(item => Number(item.id) !== Number(obj.id)));
+        } else {
+          axios.post('https://6424ae787ac292e3cfef8991.mockapi.io/cart', obj);
+          setFavorites(prev => [...prev, obj])
+        }
+      } catch(error){
+        alert("error!")
+      }
+      
+      
     }
 
     const onAddToFavorite = (obj) => {
@@ -55,8 +67,12 @@ function App() {
       // console.log(id)
     }
 
+    
+
   
   return (
+    <AppContext.Provider value={{items, favorites, onAddToCart, onAddToFavorite, cartItems}}>
+
     <div className='wrapper'>
       {cartOpened && <Drawer items={cartItems} onCloseCart={()=>setCartOpened(false)} onRemove={onRemoveItemCart} />}
 
@@ -77,32 +93,9 @@ function App() {
           <Route path='/favorites' element={ <Favorites items={favorites}  /> } />
       </Routes>
       
-      
-
-      {/* <div className="content">
-        <div className="header_cont">
-        <h1>{searchValue ? `Search: "${searchValue}"`: "All sneakers" }</h1>
-        <div className="search_block">
-            <img width={30} height={30} src="/img/search.svg" alt="lupa" />
-            <input type="text" placeholder="Search..." onChange={onChangeSearchInput} />
-        </div>
-        </div>
-        <div className="cards">
-         
-            {items.filter(item => item.title.toLowerCase().includes(searchValue)).map((item) => (
-                   <Card 
-                   key={item.articule}
-                   title={item.title} 
-                   articule={item.articule} 
-                   price={item.price} 
-                   imageUrl={item.imageUrl}
-                   onFavorite={onAddToFavorite}
-                   onPlus={onAddToCart} />
-            ))}
-
-        </div>
-      </div>          */}
     </div>
+
+    </AppContext.Provider>
   );
 }
 
